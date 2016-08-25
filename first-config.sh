@@ -14,7 +14,6 @@ systemctl restart systemd-hostnamed
 
 echo -n "Do you want to setup a static IP address? [Y/n]:"
 read ipyn
-ipyn = ("$ipyn" | 
 if [ awk '{print tolower($ipyn)}' == "no" -o awk '{print tolower($ipyn)}' == "n"]
   then
     nmcli con add con-name eth0 ifname eth0 type ethernet ipv4.dhcp-send-hostname yes
